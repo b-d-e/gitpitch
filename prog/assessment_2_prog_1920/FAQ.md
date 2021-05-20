@@ -17,6 +17,14 @@ Not recommended: peer reviewers probably don't know what this is, and so may fin
 
 Not recommended: in years gone by jQuery was essential to make things like event handling and AJAX work across browsers. However these days modern browsers offer things like the Fetch API which handle this. Internet Explorer support is not the issue it once was, because it now has such a small market share, and polyfills are available to make it look like it has Fetch. Many systems still do use jqQuery (i.e. bootstrap) but are looking to remove is as a requirement (e.g. Bootstrap 5) so I woiuldn't recommend it for a new project.
 
+### Will I get marked on documentation of the client-side code?
+
+No
+
+### What do you mean by 'gracefully handles server disconnection'
+
+Basically your client-side code should do something sensible if the connection to the server goes down (as it might do if it were connected via the internet). It should display an informative message to the user, and maybe try again later. You can test this by stopping the server and trying to interact with it through the client. Once the server is started up again the client should be able to carry on as before.
+
 ## Server-side functionality criteria
 
 ### Are we allowed to include additional modules via NPM that provide additional functionality?
@@ -30,7 +38,6 @@ If this were for real then a database of some kind would be the best way to stor
 
 ## Server-side quality criteria
 
-
 ### Is the testing solely on the server.js file or on the other js files the website uses also
 
 You only need to test the server side javascript: client-side testing is a whole different can of worms.
@@ -39,5 +46,37 @@ You only need to test the server side javascript: client-side testing is a whole
 
 Yes, if you have a good tool for API generation such as <https://learning.postman.com/docs/postman/api-documentation/documenting-your-api/> that would be fine, and a good idea.
 
+### Will adding comments to the API be sufficient for API documentation, or would it be preferable to use something like postman or 'https://www.npmjs.com/package/node-api-doc-generator' (an npm package)?
+
+You should not have to read the code to see the API documentation. You could write it in HTML by hand, or you could use a tool to do that. The postman tool looks good and well maintained, but the npm tool looks less good: not updated in a year, virtually no history of maintenance.
+
+### What do we need in the API documentation?
+
+For the API documentation the ideal is something like the documentation of the [Twitter API])https://developer.twitter.com/en/docs/api-reference-index) which lists the methods in the API and then provides the [details for each method])https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/get-statuses-retweets-id) including details of parameters and response.
+
+### How should we configure the ESLint file?
+
+
+Unless you have a good reason to do otherwise you should use the one from the first assignment i.e.
+
+```
+module.exports = {
+    "extends": "standard",
+    "rules": {
+      "semi": [2, "always"],
+      "indent": "off"
+    }
+};
+```
+
+But if you are using something else reasonable that is fine, as long as you include the relevant .eslintrc and it doesn’t require a whole load of work to set up.
+
 ## Video Presentation
 
+### You mentioned that for every 10 seconds after 2 minutes we will be losing 10% of our marks, does this apply if our video is anywhere from 2 mins 1s to 2 mins 9 seconds long ?
+
+Yes, basically it’s 1% per second.
+
+###  What information are we supposed to include in the video?
+
+The video only needs to cover the points that are not peer assessed. Treat it as a sales pitch for the criteria listed under client-side functionality and server-side functionality. You don't need to show every single thing that your site does, just show how it meets the requirements. So things like HTML validation, automated testing and the API documentation do not need to be covered. It is difficult to keep videos anonymous, so your peer assessors will not see the video.

@@ -54,7 +54,8 @@ var element = document.getElementById(id);
 @ul
 - Select item with CSS selector
 - First matching element is selected
-- Can use [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) with `foreach`
+- Can use [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+   - Use `for` or `.foreach` to iterate
 @ulend
 
 ---
@@ -76,7 +77,7 @@ var element = document.getElementById(id);
 
 - JS often included in `<head>`
 - But DOM elements not defined when code is executed
-- Common to use `document.addEventListener("DOMContentLoaded", ...)`
+- `document.addEventListener("DOMContentLoaded",f)`
 - Handlers are often anonymous functions
     - function expression
     - arrow function expression
@@ -88,7 +89,6 @@ var element = document.getElementById(id);
 
 - Change the content of an element with [innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) property
 - Add/remove elements with [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append) and [remove](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
-- These can be called through d3 `enter` and `exit` to match data
 - Change attributes e.g. class, style with [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
 
 ---
@@ -99,7 +99,6 @@ var element = document.getElementById(id);
 - Select parts of the page (DOM)
 - Update the page (DOM)
 - Attach actions (functions) to the page
-- Allows for dynamic pages (e.g. d3)
-- Next time: code quality and documentation
+- Allows for dynamic pages e.g. [Progressive Web Apps](https://web.dev/progressive-web-apps/)
 @ulend
 

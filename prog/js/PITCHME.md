@@ -1,6 +1,6 @@
 ---?color=#7E317B
 
-# Javascript
+# JavaScript
 
 ---
 
@@ -9,9 +9,9 @@
 @ul
 - Originally in browsers
 - Not Java
-- It has some good parts
+- It has some good parts @fa[smile]
 - Standardised by Ecma (once ECMA) as EcmaScript
-- Current version is ES9 (2018)
+- Current version is [ES11 (2020)](https://medium.com/codingtown/ecmascript-2020-aka-es-11-9c547f69d96f)
 - Most recent widely-supported version is ES6 (2015)
 - [Support varies](http://kangax.github.io/compat-table/es6/)
 @ulend
@@ -23,7 +23,7 @@
 @ul
 - More recently JS is also used server-side: nodejs
 - Good JS engines in mobile browsers
-- JS often used for cross-platform App dev [Cordova](https://cordova.apache.org/)
+- JS often used for cross-platform App dev with [Progressive Web Apps](https://web.dev/progressive-web-apps/)
 - Also for desktop applications with [electron](https://electronjs.org/) e.g. [atom](https://atom.io/)
 - Interpreted, not compiled: errors only happen at run-time
 - `console.log` is your friend
@@ -31,11 +31,9 @@
 
 ---
 
----
-
 ## Hello world
 
-- Embed javascript in a web page
+- Embed JavaScript in a web page
 - Use `script` tag
 ```HTML
 <html>
@@ -60,7 +58,7 @@ Looks the same as this
 </html>
 ```
 
-Use developer tools to see the console output and error
+Use developer tools to see the console output and error, or for [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)
 
 ---
 
@@ -88,7 +86,7 @@ Can run in browser as file, not just with http
 - Content Delivery Networks (CDN)
 ```HTML
 <script
- src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+ src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js">
 </script>
 ```
 
@@ -148,7 +146,7 @@ Six primitive types
 
 ## Control structures
 
-```
+```js
 if (condition) {
   statement_1;
 } else {
@@ -162,7 +160,7 @@ See also `while`, `for`, `switch`, `do`, `throw`, `try`, `catch`, ternary
 
 ## true, false, truthy and falsy
 
-These are all 'falsy':
+These are all ['falsy'](https://developer.mozilla.org/en-US/docs/Glossary/Falsy):
 - false
 - undefined
 - null
@@ -174,7 +172,7 @@ These are all 'falsy':
 
 Can use for default values e.g
 ```
-var x = x || 4;
+let x = x || 4;
 ```
 Useful when
 
@@ -192,7 +190,7 @@ Useful when
 - Often used for defining event callbacks
 - Don't have to be associated with objects but can be
 
-```
+```js
 function sum(a, b){
    return a+b;
 }
@@ -204,7 +202,7 @@ function sum(a, b){
 
 Almost equivalent is
 
-```
+```js
 var sum = function (a, b){
     return a+b;
 }
@@ -212,7 +210,7 @@ var sum = function (a, b){
 
 or
 
-```
+```js
 var sum2 = (a,b) => a+b;
 ```
 
@@ -224,14 +222,14 @@ Square bracket notation: like python, Java, C
 
 These are equivalent:
 
+```js
+let arr = new Array(1,2,3);
 ```
-var arr = new Array(1,2,3);
+```js
+let arr = Array(1,2,3);
 ```
-```
-var arr = Array(1,2,3);
-```
-```
-var arr = [1,2,3];
+```js
+let arr = [1,2,3];
 ```
 
 Arrays can contain elements of different types
@@ -240,14 +238,14 @@ Arrays can contain elements of different types
 
 ## Array iteration
 
-```
-for(var i=0; i < arr.length; i++){
+```js
+for(let i=0; i < arr.length; i++){
    console.log(arr[i]);
 }
 ```
 See methods in [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 e.g.
-```
+```js
 arr.push(4);
 ```
 
@@ -265,8 +263,8 @@ arr.push(4);
 
 ---
 
-```
-var myCar = new Object();
+```js
+let myCar = new Object();
 myCar.make = 'VW';
 myCar.model = 'Touran';
 

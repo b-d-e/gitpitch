@@ -1,5 +1,6 @@
 
-# REST: [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer)
+# REST: 
+## [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer)
 
 
 ## Summary
@@ -29,11 +30,10 @@
 ## REST parameters
 
 - For GET methods we have [already talked about this](https://github.com/stevenaeola/gitpitch/tree/master/prog/js_intro_node)
-- For POST methods you [need to add a body parser](https://github.com/stevenaeola/proglabs_js/tree/master/node_routing)
+- For POST methods you may need to [configure body parser](https://github.com/stevenaeola/proglabs_js/tree/master/node_routing)
 
 ```
-var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded());
 ```
 
 - Access values with `req.body.var_name`
@@ -56,3 +56,4 @@ or
 ```
 event.stopPropogation();
 ```
+

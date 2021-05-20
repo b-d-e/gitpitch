@@ -1,67 +1,68 @@
----?color=#7E317B
-
-# Code Quality
-
+# Code Quality {data-background-color=#7E317B}
 
 ---
 
 ## Summary
 
-- Running visualisation with CORS errors
-- Encapsulation and classes
-- Documentation with JSDoc
 - ESLint
-
-
----
-
-## CORS Errors
-
-- Cross-Origin Resource Sharing
-- JS Module feature (import) is picky
-- Run the whole thing through a web server e.g.
-```
-python -m http.server
-```
-- Then access through <http://127.0.0.1:8000>
+- Code review best practice
+- Getting the most out of VSCode
 
 ---
 
-## Making a local version
+## ESLint
 
-- Include in your own script by taking the relevant parts into one JS file
-- Include the data too
-- Use `d3.select` rather than `d3.append`
-- See [updated sunburst](sunburst)
-
----
-
-## Encapsulation and classes
-
-- Take all of the code and put it inside your class
-- Parameterise any numeric and string constants
-- Have a constructor that takes data object (or possibly url)
-
----
-
-## Documentation with JSDoc
-
-- Generates web site of documentation based on comments in code
-- Install [nodejs](https://nodejs.org/en/download/)
-- Install jsdoc with `npm install -g jsdoc`
-- Run with `jsdoc file.js`
-- Read the [documentation documentation](https://devdocs.io/jsdoc/about-getting-started)
-- Specific advice on [classes](https://devdocs.io/jsdoc/howto-es2015-classes)
-
----
-
-## Code Quality with ESLint
-
-- Checks coding standards are applied
+- Check coding standards are applied
 - Install with `npm install -g eslint`
 - Use a particular set of rules e.g. standard (need to install)
 - Customise (see coursework specification)
 - Run with `eslint file.js`
+- Beware [bikeshedding](https://exceptionnotfound.net/bikeshedding-the-daily-software-anti-pattern/) over standards
+
+---
+
+## Recommended style
+
+Put this in .eslintrc.js
+```
+module.exports = {
+    "extends": "standard",
+    "rules": {
+      "semi": [2, "always"],
+      "indent": "off"
+    }
+};
+```
+---
+
+## ESLint tooling
+
+- Consider [adding a git pre-commit hook](https://levelup.gitconnected.com/how-to-run-eslint-using-pre-commit-hook-25984fbce17e)
+- Install the [ESLint plugin for VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint):
+  - identify and auto-fix 
+
+
+## Code review best practice
+
+[Advice from Michaela Greiler](https://www.michaelagreiler.com/respectful-constructive-code-review-feedback/)
+
+---
+
+## Getting the most out of VSCode
+
+- [Advanced code editing](https://code.visualstudio.com/docs/introvideos/codeediting)
+- Auto-fix for ESLint problems
+- [Live share](https://code.visualstudio.com/learn/collaboration/live-share)
+
+---
+
+## Next time 
+
+- Is the last lecture
+- I will talk about the second assignment
+- If you want me to go over anything then let me know
+- Or come and see me in my office hour (see staff contacts)
+
 
 
 
